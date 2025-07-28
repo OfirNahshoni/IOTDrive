@@ -15,8 +15,6 @@
 
 #include "Ticket.hpp"               // ilrd::Ticket
 #include "Reactor.hpp"              // ilrd::Reactor
-#include "DispatchCallback.hpp"     // Dispatcher<Event>
-#include "IMinionProxy.hpp"         // ilrd::IMinionProxy
 
 namespace ilrd
 {

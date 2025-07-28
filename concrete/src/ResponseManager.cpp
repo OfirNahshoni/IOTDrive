@@ -11,7 +11,6 @@
 #include "Factory.hpp"
 #include "NBDProxy.hpp"
 #include "ATaskArgs.hpp"
-#include "IInputProxy.hpp"
 #include "ReadResponse.hpp"
 #include "WriteResponse.hpp"
 #include "MinionManager.hpp"

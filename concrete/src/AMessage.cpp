@@ -10,7 +10,6 @@
 
 #include "AMessage.hpp"
 
-
 /*-----------------------------------AMessage---------------------------------*/
 ilrd::AMessage::AMessage(const UID& uid) : m_uid(uid)
 { }

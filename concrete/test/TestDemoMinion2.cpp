@@ -32,11 +32,13 @@ int main()
 
 std::shared_ptr<ilrd::ICommand> CreateReadCmd(ilrd::ITaskArgs* args)
 {
+    (void)args;
     return std::make_shared<ilrd::Minion_ReadCommand>();
 }
 
 std::shared_ptr<ilrd::ICommand> CreateWriteCmd(ilrd::ITaskArgs* args)
 {
+    (void)args;
     return std::make_shared<ilrd::Minion_WriteCommand>();
 }
 

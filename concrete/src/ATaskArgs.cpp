@@ -4,8 +4,8 @@
 * @brief: This is a source file that implements the class API ATaskArgs.
 */
 
-#include "Logger.hpp"       // ilrd::Log() with Handleton
 #include "ATaskArgs.hpp"    // ilrd::ATaskArgs
+#include "Logger.hpp"       // ilrd::Log() with Handleton
 
 ilrd::ATaskArgs::ATaskArgs() : m_uid()
 { }

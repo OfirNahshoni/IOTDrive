@@ -15,8 +15,7 @@
 #include "Ticket.hpp"               // ilrd::Ticket
 #include "NBDProxy.hpp"             // ilrd::NBDProxy
 #include "IResponse.hpp"            // ilrd::IResponse
-#include "Handleton.hpp"
-#include "DispatchCallback.hpp"     // ilrd::Dispatcher<Event>
+#include "Handleton.hpp"            // ilrd::Handleton
 
 namespace ilrd
 {

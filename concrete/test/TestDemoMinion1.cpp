@@ -6,8 +6,6 @@
 * now, a local process in the same computer as the master is.
 */
 
-#include <iostream>
-
 #include "Factory.hpp"
 #include "AMessage.hpp"
 #include "Framework.hpp"

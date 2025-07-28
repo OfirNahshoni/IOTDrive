@@ -3,6 +3,7 @@
 # header-only libraries
 add_library(asocket_lib INTERFACE)
 add_library(factory_lib INTERFACE)
+add_library(reactor_lib INTERFACE)
 add_library(icommand_lib INTERFACE)
 add_library(itp_task_lib INTERFACE)
 add_library(ilistener_lib INTERFACE)
@@ -19,6 +20,7 @@ add_library(tcp_listener_socket_lib INTERFACE)
 # include directories
 target_include_directories(asocket_lib INTERFACE ${CMAKE_CURRENT_SOURCE_DIR})
 target_include_directories(factory_lib INTERFACE ${CMAKE_CURRENT_SOURCE_DIR})
+target_include_directories(reactor_lib INTERFACE ${CMAKE_CURRENT_SOURCE_DIR})
 target_include_directories(icommand_lib INTERFACE ${CMAKE_CURRENT_SOURCE_DIR})
 target_include_directories(itp_task_lib INTERFACE ${CMAKE_CURRENT_SOURCE_DIR})
 target_include_directories(ilistener_lib INTERFACE ${CMAKE_CURRENT_SOURCE_DIR})
@@ -40,6 +42,7 @@ target_include_directories(tcp_listener_socket_lib INTERFACE
                                                     ${CMAKE_CURRENT_SOURCE_DIR})
 
 # header-only dependencies
+target_link_libraries(reactor_lib INTERFACE ilistener_lib)
 target_link_libraries(udp_socket_lib INTERFACE asocket_lib)
 target_link_libraries(icommand_lib INTERFACE itask_args_lib)
 target_link_libraries(tcp_conn_socket_lib INTERFACE asocket_lib)

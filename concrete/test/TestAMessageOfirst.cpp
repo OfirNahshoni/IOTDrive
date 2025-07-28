@@ -1,9 +1,9 @@
-//
-// Created by ofir on 4/10/25.
-//
+// concrete/test/TestAMessage.cpp
+
 #include <iostream>
 
 #include "AMessage.hpp"
+#include "test_macros.h"
 
 void TestReadMessageSend()
 {
@@ -13,7 +13,7 @@ void TestReadMessageSend()
 	readMessageSend.ToBuffer(sendBuff);
 	ilrd::ReadSendMessage readMessageRecieved;
 	char* runner = sendBuff;
-	// runner += 2*sizeof(uint32_t);
+	runner += 2*sizeof(uint32_t);
 
 	readMessageRecieved.FromBuffer(runner);
 	std::cout << readMessageRecieved.GetOffset() << " , " << 
@@ -29,7 +29,7 @@ void TestWriteMessageSend()
 	const auto sendBuff = new char[writeMessageSend.GetSize()];
 	writeMessageSend.ToBuffer(sendBuff);
 	char* runner = sendBuff;
-	// runner += 2*sizeof(uint32_t);
+	runner += 2*sizeof(uint32_t);
 
 	ilrd::WriteSendMessage writeMessageRecieved;
 	writeMessageRecieved.FromBuffer(runner);
@@ -48,7 +48,7 @@ void TestWriteMessageResponse()
 	writeMessageResp.ToBuffer(sendBuff);
 	ilrd::WriteResponseMessage writeMessageResponse;
 	char* runner = sendBuff;
-	// runner += 2*sizeof(uint32_t);
+	runner += 2*sizeof(uint32_t);
 
 	writeMessageResponse.FromBuffer(runner);
 	std::cout << "status: " << writeMessageResponse.GetStatus() << std::endl;
@@ -64,7 +64,7 @@ void TestReadMessageResponse()
 	readMessageResp.ToBuffer(sendBuff);
 	ilrd::ReadResponseMessage readMessageRecieved;
 	char* runner = sendBuff;
-	// runner += 2*sizeof(uint32_t);
+	runner += 2*sizeof(uint32_t);
 
 	readMessageRecieved.FromBuffer(runner);
 	std::cout << "length: " << readMessageRecieved.GetLength() << std::endl;
@@ -78,5 +78,7 @@ int main()
 	TestWriteMessageSend();
 	TestReadMessageResponse();
 	TestWriteMessageResponse();
+	PASS;
+
 	return 0;
 }

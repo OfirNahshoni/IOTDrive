@@ -11,6 +11,7 @@
 
 #include "Factory.hpp"
 #include "NBDProxy.hpp"
+#include "Handleton.hpp"
 
 void ilrd::NBDProxy::Init(NBDServer& nbd)
 {

@@ -19,7 +19,6 @@
 #include "ATaskArgs.hpp"
 #include "NBDServer.hpp"
 #include "IInputProxy.hpp"
-#include "TCPConnSocket.hpp"
 #include "DispatchCallback.hpp"
 
 namespace ilrd

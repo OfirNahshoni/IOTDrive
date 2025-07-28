@@ -8,6 +8,8 @@
 #ifndef ILRD_RD1645_ATASK_ARGS_HPP
 #define ILRD_RD1645_ATASK_ARGS_HPP
 
+#include <memory>           // std::shared_ptr
+
 #include "UID.hpp"
 #include "ITaskArgs.hpp"    // ilrd::ITaskArgs
 

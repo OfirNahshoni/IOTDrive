@@ -1,4 +1,4 @@
-#include <iostream>                 // std::cout
+// TestMaster.cpp
 
 #include "Factory.hpp"              // ilrd::Factory
 #include "NBDProxy.hpp"             // ilrd::NBDProxy
@@ -63,10 +63,10 @@ void TestsStdin(char* deviceName)
     const size_t blockSize = 4 * 1024 * 1024;
 
     // MinionProxy
-    std::shared_ptr<IMinionProxy> m1 = std::make_shared<MinionProxy>("5000", 
-                                                        "5001", "10.1.0.228");
-    std::shared_ptr<IMinionProxy> m2 = std::make_shared<MinionProxy>("5003", 
-                                                "5002", "10.1.0.130");
+    std::shared_ptr<IMinionProxy> m1 = std::make_shared<MinionProxy>(
+                        "5000","5001", "10.1.0.228");
+    std::shared_ptr<IMinionProxy> m2 = std::make_shared<MinionProxy>(
+                        "5003","5002", "10.1.0.130");
 
     ilrd::NBDServer nbdServer(deviceName, 2 * blockSize);
     

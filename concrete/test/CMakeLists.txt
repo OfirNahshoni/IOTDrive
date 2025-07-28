@@ -1,18 +1,37 @@
 # concrete/test/CMakeLists.txt
 
-cmake_minimum_required(VERSION 3.20)
-project(Concrete)
+# include test_macros
+include_directories(${CMAKE_SOURCE_DIR}/framework/test)
 
-add_executable(concrete TestMaster.cpp)
-target_link_libraries(concrete concrete_static)
+# executables
+add_executable(test_amessage TestAMessageOfirst.cpp)
+add_executable(minion1 TestDemoMinion1.cpp)
+add_executable(minion2 TestDemoMinion2.cpp)
+add_executable(master TestMaster.cpp)
 
-add_executable(concrete_minion1 TestDemoMinion1.cpp)
-target_link_libraries(concrete_minion1 concrete_minion_static)
+# link libraries to executables
+target_link_libraries(test_amessage PRIVATE amessage_static_lib uid_static_lib)
+target_link_libraries(minion1 PRIVATE factory_lib amessage_static_lib
+            framework_static_lib itask_args_lib handleton_shared_lib
+            file_manager_static_lib master_proxy_static_lib
+            minion_read_command_static_lib minion_write_command_static_lib
+            asocket_static_lib udp_socket_static_lib
+            read_response_static_lib uid_static_lib write_response_static_lib
+            reactor_static_lib)
 
-add_executable(file_creator Create8MBFile.cpp)
+target_link_libraries(minion2 PRIVATE factory_lib amessage_static_lib
+            framework_static_lib itask_args_lib handleton_shared_lib
+            file_manager_static_lib master_proxy_static_lib
+            minion_read_command_static_lib minion_write_command_static_lib
+            asocket_static_lib udp_socket_static_lib
+            read_response_static_lib uid_static_lib write_response_static_lib
+            reactor_static_lib)
 
-add_executable(concrete_minion2 TestDemoMinion2.cpp)
-target_link_libraries(concrete_minion2 concrete_minion_static)
-
-#add_executable(concrete_pi TestMinionRaspberry.cpp)
-#target_link_libraries(concrete_pi concrete_minion_static)
+target_link_libraries(master PRIVATE factory_lib nbd_proxy_static_lib
+            framework_static_lib nbd_server_static_lib itask_args_lib
+            minion_proxy_static_lib read_command_static_lib
+            write_command_static_lib minion_manager_static_lib
+            response_manager_static_lib uid_static_lib
+            tcp_conn_socket_static_lib udp_socket_static_lib ticket_static_lib
+            read_response_static_lib write_response_static_lib
+            task_result_static_lib)

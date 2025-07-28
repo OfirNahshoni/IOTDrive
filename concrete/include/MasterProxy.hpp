@@ -15,7 +15,6 @@
 
 #include "UID.hpp"
 #include "UDPSocket.hpp"
-#include "ITaskArgs.hpp"
 #include "IInputProxy.hpp"
 
 namespace ilrd
