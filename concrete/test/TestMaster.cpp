@@ -1,4 +1,10 @@
-// TestMaster.cpp
+/**
+* @file: TestMaster.cpp
+* @author: Ofir Nahshoni
+* @brief: This is the main file of the master. The master is the concrete
+* component that has all the main components, like:
+* Framework, MinionManager, ResponseManager.
+*/
 
 #include "Factory.hpp"              // ilrd::Factory
 #include "NBDProxy.hpp"             // ilrd::NBDProxy
@@ -67,18 +73,15 @@ void TestsStdin(char* deviceName)
                         "5000","5001", "10.1.0.228");
     std::shared_ptr<IMinionProxy> m2 = std::make_shared<MinionProxy>(
                         "5003","5002", "10.1.0.130");
-
-    ilrd::NBDServer nbdServer(deviceName, 2 * blockSize);
-    
     std::vector<std::shared_ptr<IMinionProxy>> minions = {m1, m2};
 
     // MinionManager
     Handleton::GetInstance<MinionManager>()->Init(blockSize, minions);
 
-    // NBDProxy
+    // NBDProxy & NBDServer
+    ilrd::NBDServer nbdServer(deviceName, 2 * blockSize);
     Handleton::GetInstance<Factory<Mode, ATaskArgs, NBDArgs>>();
     NBDProxy* nbdProxy = Handleton::GetInstance<NBDProxy>();
-
     Handleton::GetInstance<NBDProxy>()->Init(nbdServer);
 
     // ResponseManager

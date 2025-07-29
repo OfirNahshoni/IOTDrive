@@ -2,11 +2,9 @@
 * @file: TestDemoMionion2.cpp
 * @author: Ofir Nahshoni
 * @brief: This is a file that simulate the communication between the
-* MinionProxy and the Minion itself (which will a Raspberry PI). this is, for
-* now, a local process in the same computer as the master is.
+* MinionProxy and the Minion itself (which will be a Raspberry PI). This is,
+* for now, a local process in the same computer as the master is.
 */
-
-#include <iostream>
 
 #include "Factory.hpp"
 #include "AMessage.hpp"

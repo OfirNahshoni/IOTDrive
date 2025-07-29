@@ -8,6 +8,7 @@ add_executable(test_amessage TestAMessageOfirst.cpp)
 add_executable(minion1 TestDemoMinion1.cpp)
 add_executable(minion2 TestDemoMinion2.cpp)
 add_executable(master TestMaster.cpp)
+add_executable(create_demo_file Create8MBFile.cpp)
 
 # link libraries to executables
 target_link_libraries(test_amessage PRIVATE amessage_static_lib uid_static_lib)
